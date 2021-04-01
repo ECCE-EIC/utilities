@@ -25,7 +25,7 @@ There are many more features, which you are welcome to explore.
 \subsection Crossreference Crossreferencing with ECCE-EIC Git Respository
 
 Through a special build of Doxygen, <a href = "https://github.com/ECCE-EIC/">
-EIC GitHub respostory</a> were automatically linked for
+ECCE GitHub respostory</a> were automatically linked for
 Files, directories and member definitions.
 And users can choose between viewing the local copy of the source code (with more features) or the GitHub version (most up-to-date).
 Check out links like <EM>View newest version in GitHub</EM>
