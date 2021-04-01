@@ -7,7 +7,7 @@
 
 \tableofcontents
 
-Welcome to EIC simulation software documentation!
+Welcome to ECCE@EIC simulation software documentation!
 
 \section STARTwebsite Start using this website
 
@@ -22,9 +22,9 @@ Many feature of the website will help you navigate through the ocean of source c
 \li Highlighted <b>source code</b> with crossreferencing. Example click <i>"Go to the source code"</i> in \ref PHG4Hitv1.cc .
 There are many more features, which you are welcome to explore.
 
-\subsection Crossreference Crossreferencing with EIC Git Respository
+\subsection Crossreference Crossreferencing with ECCE-EIC Git Respository
 
-Through a special build of Doxygen, <a href = "https://github.com/eic/">
+Through a special build of Doxygen, <a href = "https://github.com/ECCE-EIC/">
 EIC GitHub respostory</a> were automatically linked for
 Files, directories and member definitions.
 And users can choose between viewing the local copy of the source code (with more features) or the GitHub version (most up-to-date).
