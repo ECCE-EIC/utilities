@@ -26,7 +26,7 @@ DOXYFILE_ENCODING      = UTF-8
 # identify the project. Note that if you do not use Doxywizard you need
 # to put quotes around the project name if it contains spaces.
 
-PROJECT_NAME           = "EIC Software"
+PROJECT_NAME           = "ECCE @ EIC Software"
 
 # The PROJECT_NUMBER tag can be used to enter a project or revision number.
 # This could be handy for archiving the generated documentation or
@@ -38,7 +38,7 @@ PROJECT_NUMBER         =
 # for a project that appears at the top of each page and should give viewer
 # a quick idea about the purpose of the project. Keep the description short.
 
-PROJECT_BRIEF          = "Documentation for <a href="http://www.eicug.org/">EIC</a> <a href="https://eic.github.io/">software</a>"
+PROJECT_BRIEF          = "Documentation for <a href="https://www.ecce-eic.org/">ECCE @ EIC</a> <a href="https://github.com/ECCE-EIC">software</a>"
 
 # With the PROJECT_LOGO tag one can specify an logo or icon that is
 # included in the documentation. The maximum height of the logo should not
