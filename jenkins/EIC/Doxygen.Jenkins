@@ -130,7 +130,7 @@ pipeline
 										userRemoteConfigs: 
 										[[
 										credentialsId: 'sPHENIX-bot', 
-										url: 'https://github.com/ECCE-EIC/online_distribution.git',
+										url: 'https://github.com/ECCE-EIC/online_distribution',
 										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
 										]]
 									] //checkout
@@ -171,7 +171,7 @@ pipeline
 										userRemoteConfigs: 
 										[[
 										credentialsId: 'sPHENIX-bot', 
-										url: 'https://github.com/ECCE-EIC/ecce-detectors.git',
+										url: 'https://github.com/ECCE-EIC/ecce-detectors',
 										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
 										]]
 									] //checkout
