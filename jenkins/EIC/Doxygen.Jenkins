@@ -240,7 +240,7 @@ pipeline
 								echo "Perform a doxygen build with at least one changes"
 								perform_build = true
 							}
-							if (force_perform_build)
+							if (force_perform_build == "true")
 							{
 								echo "Perform a doxygen build due to force_perform_build"
 								perform_build = true
