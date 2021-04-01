@@ -212,9 +212,10 @@ pipeline
 							}//							for (int i = 0; i < changeLogSets.size(); i++) {
 
 							def changeLogSetSize = changeLogSets.size()
-							if (changeLogSetSize >0 )
+							echo "changeLogSets.size = ${changeLogSetSize}. force_perform_build = ${force_perform_build}. "
+							if (changeLogSetSize >0 || force_perform_build)
 							{
-								echo "changeLogSets.size = ${changeLogSetSize}. Perform a doxygen build."
+								echo "Perform a doxygen build...."
 								perform_build = true
 							}
 
