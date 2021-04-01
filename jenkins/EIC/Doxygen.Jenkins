@@ -234,9 +234,15 @@ pipeline
 
 							def changeLogSetSize = changeLogSets.size()
 							echo "changeLogSets.size = ${changeLogSetSize}. force_perform_build = ${force_perform_build}. "
-							if (changeLogSetSize >0 || force_perform_build)
+							
+							if (changeLogSetSize >0)
 							{
-								echo "Perform a doxygen build...."
+								echo "Perform a doxygen build with at least one changes"
+								perform_build = true
+							}
+							if (force_perform_build)
+							{
+								echo "Perform a doxygen build due to force_perform_build"
 								perform_build = true
 							}
 
