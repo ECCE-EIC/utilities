@@ -142,8 +142,8 @@ STRIP_FROM_PATH        = ./
 STRIP_FROM_INC_PATH    = ./
 
 CVS_LINK_ENABLE        = YES
-# CVS_STRIP_FROM_PATH    = /var/lib/jenkins/workspace/EIC/doxygen/work # moved to shell setup
-CVS_URL_PREFIX         = "https://github.com/eic/"
+# CVS_STRIP_FROM_PATH    = /var/lib/jenkins/workspace/ECCE/doxygen/work # moved to shell setup
+CVS_URL_PREFIX         = "https://github.com/ECCE-EIC/"
 CVS_URL_SUFIX          = ""
 
 
