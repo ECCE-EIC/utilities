@@ -16,13 +16,13 @@ $treeview $search $mathjax
 <link href="$relpath$$stylesheet" rel="stylesheet" type="text/css" />
 $extrastylesheet
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155388685-3"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E4SX1RFCJ9"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-155388685-3');
+  gtag('config', 'G-E4SX1RFCJ9');
 </script>
 </head>
 <body>
@@ -48,8 +48,8 @@ $extrastylesheet
 							</div> <!--BEGIN PROJECT_BRIEF-->
 							<div id="projectbrief">
 								Reference for 
-								<a href="https://eic.github.io/">EIC</a> 
-								<a href="https://github.com/eic/">simulation and reconstruction software on GitHub</a>
+								<a href="https://www.ecce-eic.org/">ECCE @ EIC</a> 
+								<a href="https://github.com/ECCE-EIC/">simulation and reconstruction software on GitHub</a>
 							</div> <!--END PROJECT_BRIEF-->
 						</td>
 						<!--END PROJECT_NAME-->
