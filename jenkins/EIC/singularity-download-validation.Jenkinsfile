@@ -86,7 +86,7 @@ pipeline
 							  	[[
 							    	//credentialsId: 'sPHENIX-bot', url: 'https://github.com/ecce-eic/macros.git'
 							     	credentialsId: 'sPHENIX-bot', 
-							     	url: 'https://github.com/ecce-eic/fmacros.git',
+							     	url: 'https://github.com/ecce-eic/macros.git',
 							     	refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master'), 
 							    	branch: ('*')
 							  	]]
