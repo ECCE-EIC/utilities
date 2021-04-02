@@ -138,7 +138,7 @@ pipeline
 							writeFile file: "test.sh", text: """
 #! /bin/bash
 
-source /cvmfs/eic.opensciencegrid.org/gcc-8.3/opt/fun4all/core/bin/ecce_setup.sh -n ${build_type}
+source /cvmfs/eic.opensciencegrid.org/ecce/gcc-8.3/opt/fun4all/core/bin/ecce_setup.sh -n ${build_type}
 
 env;
 
