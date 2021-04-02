@@ -61,9 +61,9 @@ pipeline
 							    ], 
 							  	userRemoteConfigs: 
 							  	[[
-							    	//credentialsId: 'sPHENIX-bot', url: 'https://github.com/eic/Singularity.git'
+							    	//credentialsId: 'sPHENIX-bot', url: 'https://github.com/ecce-eic/Singularity.git'
 							     	credentialsId: 'sPHENIX-bot', 
-							     	url: 'https://github.com/eic/Singularity.git',
+							     	url: 'https://github.com/ecce-eic/Singularity.git',
 							     	refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master'), 
 							    	branch: ('*')
 							  	]]
@@ -71,7 +71,7 @@ pipeline
 							)//checkout
 						}//						dir('Singularity') {
 						
-						dir('fun4all_macros') {
+						dir('macros') {
 							
 							checkout(
 								[
@@ -84,9 +84,9 @@ pipeline
 							    ], 
 							  	userRemoteConfigs: 
 							  	[[
-							    	//credentialsId: 'sPHENIX-bot', url: 'https://github.com/eic/fun4all_macros.git'
+							    	//credentialsId: 'sPHENIX-bot', url: 'https://github.com/ecce-eic/macros.git'
 							     	credentialsId: 'sPHENIX-bot', 
-							     	url: 'https://github.com/eic/fun4all_macros.git',
+							     	url: 'https://github.com/ecce-eic/fmacros.git',
 							     	refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master'), 
 							    	branch: ('*')
 							  	]]
@@ -142,7 +142,7 @@ source /cvmfs/eic.opensciencegrid.org/ecce/gcc-8.3/opt/fun4all/core/bin/ecce_set
 
 env;
 
-cd ../fun4all_macros/detectors/EICDetector/
+cd ../macros/detectors/EICDetector/
 ls -lhvc
 
 root -b -q Fun4All_G4_EICDetector.C
