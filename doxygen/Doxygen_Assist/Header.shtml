@@ -35,7 +35,7 @@ $extrastylesheet
 				<tbody>
 					<tr style="height: 56px;">
 						<!--BEGIN PROJECT_LOGO-->
-						<td id="projectlogo"><a href="https://eic.github.io/"><img
+						<td id="projectlogo"><a href="https://ecce-eic.github.io/"><img
 								alt="Logo" src="$relpath$$projectlogo" height="100"/></a></td>
 						<!--END PROJECT_LOGO-->
 						<!--BEGIN PROJECT_NAME-->
@@ -49,7 +49,7 @@ $extrastylesheet
 							<div id="projectbrief">
 								Reference for 
 								<a href="https://www.ecce-eic.org/">ECCE @ EIC</a> 
-								<a href="https://github.com/ECCE-EIC/">simulation and reconstruction software on GitHub</a>
+								<a href="https://ecce-eic.github.io/">simulation and reconstruction software on GitHub</a>
 							</div> <!--END PROJECT_BRIEF-->
 						</td>
 						<!--END PROJECT_NAME-->
