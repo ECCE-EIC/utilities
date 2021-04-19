@@ -54,7 +54,7 @@ pipeline
 						{
 							
 						
-							dir('fun4all_coresoftware')
+							dir('coresoftware')
 							{
 								
 								checkout(
@@ -68,14 +68,14 @@ pipeline
 										userRemoteConfigs: 
 										[[
 										credentialsId: 'sPHENIX-bot', 
-										url: 'https://github.com/eic/fun4all_coresoftware.git',
+										url: 'https://github.com/ECCE-EIC/coresoftware',
 										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
 										]]
 									] //checkout
 								)//checkout				
 							} // dir
 							
-							dir('fun4all_tutorials')
+							dir('tutorials')
 							{
 								checkout(
 									[
@@ -88,7 +88,7 @@ pipeline
 										userRemoteConfigs: 
 										[[
 										credentialsId: 'sPHENIX-bot', 
-										url: 'https://github.com/eic/fun4all_tutorials.git',
+										url: 'https://github.com/ECCE-EIC/tutorials',
 										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
 										]]
 									] //checkout
@@ -96,7 +96,7 @@ pipeline
 							} // dir
 						
 							
-							dir('fun4all_macros')
+							dir('macros')
 							{
 								checkout(
 									[
@@ -109,52 +109,13 @@ pipeline
 										userRemoteConfigs: 
 										[[
 										credentialsId: 'sPHENIX-bot', 
-										url: 'https://github.com/eic/fun4all_macros.git',
+										url: 'https://github.com/ECCE-EIC/macros',
 										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
 										]]
 									] //checkout
 								)//checkout			
 							} // dir 
 							
-							dir('fun4all_eicmacros')
-							{
-								checkout(
-									[
-										$class: 'GitSCM',
-										extensions: [               
-											[$class: 'CleanBeforeCheckout'], 
-											[$class: 'CleanCheckout'],
-											[$class: 'RelativeTargetDirectory', relativeTargetDir: 'blob/master/']										
-										],
-										userRemoteConfigs: 
-										[[
-										credentialsId: 'sPHENIX-bot', 
-										url: 'https://github.com/eic/fun4all_eicmacros.git',
-										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
-										]]
-									] //checkout
-								)//checkout			
-							} // dir 
-							
-							dir('fun4all_eic_qa')
-							{
-								checkout(
-									[
-										$class: 'GitSCM',
-										extensions: [               
-											[$class: 'CleanBeforeCheckout'], 
-											[$class: 'CleanCheckout'],
-											[$class: 'RelativeTargetDirectory', relativeTargetDir: 'blob/master/']										
-										],
-										userRemoteConfigs: 
-										[[
-										credentialsId: 'sPHENIX-bot', 
-										url: 'https://github.com/eic/fun4all_eic_qa.git',
-										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
-										]]
-									] //checkout
-								)//checkout			
-							} // dir 
 							
 							dir('online_distribution')
 							{
@@ -169,7 +130,7 @@ pipeline
 										userRemoteConfigs: 
 										[[
 										credentialsId: 'sPHENIX-bot', 
-										url: 'https://github.com/eic/online_distribution.git',
+										url: 'https://github.com/ECCE-EIC/online_distribution',
 										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
 										]]
 									] //checkout
@@ -177,7 +138,7 @@ pipeline
 							} // dir
 							
 							
-							dir('fun4all_acts')
+							dir('acts')
 							{
 								checkout(
 									[
@@ -190,14 +151,14 @@ pipeline
 										userRemoteConfigs: 
 										[[
 										credentialsId: 'sPHENIX-bot', 
-										url: 'https://github.com/eic/fun4all_acts.git',
+										url: 'https://github.com/ECCE-EIC/acts',
 										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
 										]]
 									] //checkout
 								)//checkout			
 							} // dir
 							
-							dir('g4lblvtx')
+							dir('ecce-detectors')
 							{
 								checkout(
 									[
@@ -210,14 +171,15 @@ pipeline
 										userRemoteConfigs: 
 										[[
 										credentialsId: 'sPHENIX-bot', 
-										url: 'https://github.com/eic/g4lblvtx.git',
+										url: 'https://github.com/ECCE-EIC/ecce-detectors',
 										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
 										]]
 									] //checkout
 								)//checkout			
 							} // dir
 							
-							dir('g4exampledetector')
+							
+							dir('analysis')
 							{
 								checkout(
 									[
@@ -230,297 +192,7 @@ pipeline
 										userRemoteConfigs: 
 										[[
 										credentialsId: 'sPHENIX-bot', 
-										url: 'https://github.com/eic/g4exampledetector.git',
-										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
-										]]
-									] //checkout
-								)//checkout			
-							} // dir
-							
-							
-							
-							dir('fun4all_g4jleic')
-							{
-								checkout(
-									[
-										$class: 'GitSCM',
-										extensions: [               
-											[$class: 'CleanBeforeCheckout'], 
-											[$class: 'CleanCheckout'],
-											[$class: 'RelativeTargetDirectory', relativeTargetDir: 'blob/master/']										
-										],
-										userRemoteConfigs: 
-										[[
-										credentialsId: 'sPHENIX-bot', 
-										url: 'https://github.com/eic/fun4all_g4jleic.git',
-										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
-										]]
-									] //checkout
-								)//checkout			
-							} // dir
-							
-							
-							dir('Fun4All-lmon')
-							{
-								checkout(
-									[
-										$class: 'GitSCM',
-										extensions: [               
-											[$class: 'CleanBeforeCheckout'], 
-											[$class: 'CleanCheckout'],
-											[$class: 'RelativeTargetDirectory', relativeTargetDir: 'blob/master/']										
-										],
-										userRemoteConfigs: 
-										[[
-										credentialsId: 'sPHENIX-bot', 
-										url: 'https://github.com/eic/Fun4All-lmon.git',
-										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
-										]]
-									] //checkout
-								)//checkout			
-							} // dir
-							
-							dir('fun4all_GenFit')
-							{
-								checkout(
-									[
-										$class: 'GitSCM',
-										extensions: [               
-											[$class: 'CleanBeforeCheckout'], 
-											[$class: 'CleanCheckout'],
-											[$class: 'RelativeTargetDirectory', relativeTargetDir: 'blob/master/']										
-										],
-										userRemoteConfigs: 
-										[[
-										credentialsId: 'sPHENIX-bot', 
-										url: 'https://github.com/eic/fun4all_GenFit.git',
-										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
-										]]
-									] //checkout
-								)//checkout			
-							} // dir
-							
-							
-							dir('BeastMagneticField')
-							{
-								checkout(
-									[
-										$class: 'GitSCM',
-										extensions: [               
-											[$class: 'CleanBeforeCheckout'], 
-											[$class: 'CleanCheckout'],
-											[$class: 'RelativeTargetDirectory', relativeTargetDir: 'blob/master/']										
-										],
-										userRemoteConfigs: 
-										[[
-										credentialsId: 'sPHENIX-bot', 
-										url: 'https://github.com/eic/BeastMagneticField.git',
-										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
-										]]
-									] //checkout
-								)//checkout			
-							} // dir
-							
-							
-							dir('PEPSI')
-							{
-								checkout(
-									[
-										$class: 'GitSCM',
-										extensions: [               
-											[$class: 'CleanBeforeCheckout'], 
-											[$class: 'CleanCheckout'],
-											[$class: 'RelativeTargetDirectory', relativeTargetDir: 'blob/master/']										
-										],
-										userRemoteConfigs: 
-										[[
-										credentialsId: 'sPHENIX-bot', 
-										url: 'https://github.com/eic/PEPSI.git',
-										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
-										]]
-									] //checkout
-								)//checkout			
-							} // dir
-							
-							dir('eic-smear')
-							{
-								checkout(
-									[
-										$class: 'GitSCM',
-										extensions: [               
-											[$class: 'CleanBeforeCheckout'], 
-											[$class: 'CleanCheckout'],
-											[$class: 'RelativeTargetDirectory', relativeTargetDir: 'blob/master/']										
-										],
-										userRemoteConfigs: 
-										[[
-										credentialsId: 'sPHENIX-bot', 
-										url: 'https://github.com/eic/eic-smear.git',
-										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
-										]]
-									] //checkout
-								)//checkout			
-							} // dir
-							
-							dir('eicsmear-jetexample')
-							{
-								checkout(
-									[
-										$class: 'GitSCM',
-										extensions: [               
-											[$class: 'CleanBeforeCheckout'], 
-											[$class: 'CleanCheckout'],
-											[$class: 'RelativeTargetDirectory', relativeTargetDir: 'blob/master/']										
-										],
-										userRemoteConfigs: 
-										[[
-										credentialsId: 'sPHENIX-bot', 
-										url: 'https://github.com/eic/eicsmear-jetexample.git',
-										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
-										]]
-									] //checkout
-								)//checkout			
-							} // dir
-							
-							dir('fun4all_eicdetectors')
-							{
-								checkout(
-									[
-										$class: 'GitSCM',
-										extensions: [               
-											[$class: 'CleanBeforeCheckout'], 
-											[$class: 'CleanCheckout'],
-											[$class: 'RelativeTargetDirectory', relativeTargetDir: 'blob/master/']										
-										],
-										userRemoteConfigs: 
-										[[
-										credentialsId: 'sPHENIX-bot', 
-										url: 'https://github.com/eic/fun4all_eicdetectors.git',
-										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
-										]]
-									] //checkout
-								)//checkout			
-							} // dir
-							
-							
-							dir('fun4all_eic_tutorials')
-							{
-								checkout(
-									[
-										$class: 'GitSCM',
-										extensions: [               
-											[$class: 'CleanBeforeCheckout'], 
-											[$class: 'CleanCheckout'],
-											[$class: 'RelativeTargetDirectory', relativeTargetDir: 'blob/master/']										
-										],
-										userRemoteConfigs: 
-										[[
-										credentialsId: 'sPHENIX-bot', 
-										url: 'https://github.com/eic/fun4all_eic_tutorials.git',
-										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
-										]]
-									] //checkout
-								)//checkout			
-							} // dir
-							
-							
-							dir('eicsmeardetectors')
-							{
-								checkout(
-									[
-										$class: 'GitSCM',
-										extensions: [               
-											[$class: 'CleanBeforeCheckout'], 
-											[$class: 'CleanCheckout'],
-											[$class: 'RelativeTargetDirectory', relativeTargetDir: 'blob/master/']										
-										],
-										userRemoteConfigs: 
-										[[
-										credentialsId: 'sPHENIX-bot', 
-										url: 'https://github.com/eic/eicsmeardetectors.git',
-										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
-										]]
-									] //checkout
-								)//checkout			
-							} // dir
-							
-							
-							dir('EicRoot')
-							{
-								checkout(
-									[
-										$class: 'GitSCM',
-										extensions: [               
-											[$class: 'CleanBeforeCheckout'], 
-											[$class: 'CleanCheckout'],
-											[$class: 'RelativeTargetDirectory', relativeTargetDir: 'blob/master/']										
-										],
-										userRemoteConfigs: 
-										[[
-										credentialsId: 'sPHENIX-bot', 
-										url: 'https://github.com/eic/EicRoot.git',
-										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
-										]]
-									] //checkout
-								)//checkout			
-							} // dir
-							
-							
-							dir('delphes_EIC')
-							{
-								checkout(
-									[
-										$class: 'GitSCM',
-										extensions: [               
-											[$class: 'CleanBeforeCheckout'], 
-											[$class: 'CleanCheckout'],
-											[$class: 'RelativeTargetDirectory', relativeTargetDir: 'blob/master/']										
-										],
-										userRemoteConfigs: 
-										[[
-										credentialsId: 'sPHENIX-bot', 
-										url: 'https://github.com/eic/delphes_EIC.git',
-										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
-										]]
-									] //checkout
-								)//checkout			
-							} // dir
-							
-							
-							dir('EicToyModel')
-							{
-								checkout(
-									[
-										$class: 'GitSCM',
-										extensions: [               
-											[$class: 'CleanBeforeCheckout'], 
-											[$class: 'CleanCheckout'],
-											[$class: 'RelativeTargetDirectory', relativeTargetDir: 'blob/master/']										
-										],
-										userRemoteConfigs: 
-										[[
-										credentialsId: 'sPHENIX-bot', 
-										url: 'https://github.com/eic/EicToyModel.git',
-										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
-										]]
-									] //checkout
-								)//checkout			
-							} // dir
-							
-							dir('estarlight')
-							{
-								checkout(
-									[
-										$class: 'GitSCM',
-										extensions: [               
-											[$class: 'CleanBeforeCheckout'], 
-											[$class: 'CleanCheckout'],
-											[$class: 'RelativeTargetDirectory', relativeTargetDir: 'blob/master/']										
-										],
-										userRemoteConfigs: 
-										[[
-										credentialsId: 'sPHENIX-bot', 
-										url: 'https://github.com/eic/estarlight.git',
+										url: 'https://github.com/ECCE-EIC/analysis',
 										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
 										]]
 									] //checkout
@@ -561,9 +233,16 @@ pipeline
 							}//							for (int i = 0; i < changeLogSets.size(); i++) {
 
 							def changeLogSetSize = changeLogSets.size()
-							if (changeLogSetSize >0 )
+							echo "changeLogSets.size = ${changeLogSetSize}. force_perform_build = ${force_perform_build}. "
+							
+							if (changeLogSetSize >0)
 							{
-								echo "changeLogSets.size = ${changeLogSetSize}. Perform a doxygen build."
+								echo "Perform a doxygen build with at least one changes"
+								perform_build = true
+							}
+							if (force_perform_build == "true")
+							{
+								echo "Perform a doxygen build due to force_perform_build"
 								perform_build = true
 							}
 

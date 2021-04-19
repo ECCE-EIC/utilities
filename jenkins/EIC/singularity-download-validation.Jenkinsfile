@@ -61,9 +61,9 @@ pipeline
 							    ], 
 							  	userRemoteConfigs: 
 							  	[[
-							    	//credentialsId: 'sPHENIX-bot', url: 'https://github.com/eic/Singularity.git'
+							    	//credentialsId: 'sPHENIX-bot', url: 'https://github.com/ecce-eic/Singularity.git'
 							     	credentialsId: 'sPHENIX-bot', 
-							     	url: 'https://github.com/eic/Singularity.git',
+							     	url: 'https://github.com/ecce-eic/Singularity.git',
 							     	refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master'), 
 							    	branch: ('*')
 							  	]]
@@ -71,7 +71,7 @@ pipeline
 							)//checkout
 						}//						dir('Singularity') {
 						
-						dir('fun4all_macros') {
+						dir('macros') {
 							
 							checkout(
 								[
@@ -84,9 +84,9 @@ pipeline
 							    ], 
 							  	userRemoteConfigs: 
 							  	[[
-							    	//credentialsId: 'sPHENIX-bot', url: 'https://github.com/eic/fun4all_macros.git'
+							    	//credentialsId: 'sPHENIX-bot', url: 'https://github.com/ecce-eic/macros.git'
 							     	credentialsId: 'sPHENIX-bot', 
-							     	url: 'https://github.com/eic/fun4all_macros.git',
+							     	url: 'https://github.com/ecce-eic/macros.git',
 							     	refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master'), 
 							    	branch: ('*')
 							  	]]
@@ -138,11 +138,11 @@ pipeline
 							writeFile file: "test.sh", text: """
 #! /bin/bash
 
-source /cvmfs/eic.opensciencegrid.org/gcc-8.3/opt/fun4all/core/bin/eic_setup.sh -n new
+source /cvmfs/eic.opensciencegrid.org/ecce/gcc-8.3/opt/fun4all/core/bin/ecce_setup.sh -n ${build_type}
 
 env;
 
-cd ../fun4all_macros/detectors/EICDetector/
+cd ../macros/detectors/EICDetector/
 ls -lhvc
 
 root -b -q Fun4All_G4_EICDetector.C
