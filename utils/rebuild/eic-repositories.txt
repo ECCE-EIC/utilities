@@ -1,4 +1,5 @@
 calibrations
+eictoydetector
 fun4all_acts
 fun4all_coresoftware
 fun4all_eicdetectors
@@ -6,7 +7,7 @@ fun4all_g4jleic
 fun4all_macros
 fun4all_eic_qa
 fun4all_eicmacros
-g4hakanvtx
+fun4allgdmlimport
 g4lblvtx
 online_distribution
 qinhua
