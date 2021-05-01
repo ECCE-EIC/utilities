@@ -40,6 +40,11 @@ for (my $arg = 0; $arg <= $#ARGV; $arg++)
     $cmdline = $cmdline . " $ARGV[$arg]";
 }
 
+if (! defined $OPT_SPHENIX)
+{
+    die "$OPT_SPHENIX not set - forgot to source the setup script?";
+}
+
 umask 002;
 $MAIL = '/bin/mail';
 my $SENDMAIL = "/usr/sbin/sendmail -t";
@@ -74,7 +79,6 @@ my %externalRootPackages = (
     "KFParticle" => "KFParticle",
     "pythiaeRHIC" => "pythiaeRHIC",
     "sartre" => "sartre",
-    "tpc-rs" => "tpc-rs",
     "vgm" => "vgm"
     );
 my $rootversion = `root-config --version`;
@@ -275,7 +279,10 @@ if ($opt_version =~ /play/)
 {
     if ($opt_sysname =~ /gcc-8.3/)
     {
-        $externalPackages{"HepMC"} = "HepMC-2.06.11";
+        $externalPackages{"boost"} = "boost-1.76.0";
+        $externalPackages{"tbb"} = "tbb-2020.3";
+	$externalRootPackages{"HepMC3"} = "HepMC3-3.2.3";
+	$externalRootPackages{"DD4hep"} = "DD4hep-01-15";
     }
     else
     {
@@ -949,14 +956,22 @@ if ($opt_stage < 4)
 	    print LOG "repository https://github.com/$repoowner{$repo}/$repo.git also does not exist\n";
 	}
     }
-# git clone -q --> no progress report to stdout
-    my $gitcommand = sprintf("git clone -q https://github.com/%s/calibrations.git $OFFLINE_MAIN/share/calibrations",$repoowner{$repo});
-    if ($opt_eic)
+# rsync over calibrations to $OFFLINE_MAIN/rootmacros
+    my $calibrationstargetdir = sprintf("%s/share/calibrations",$installDir);
+    make_path($calibrationstargetdir,{mode => 0775});
+    foreach my $repo (@gitrepos)
     {
-        $gitcommand = sprintf("git clone -q https://github.com/%s/fun4all_calibrations.git $OFFLINE_MAIN/share/calibrations",$opt_repoowner);
+	if ($repo =~ /calibrations/)
+	{
+	    my $calibsrcdir = sprintf("%s/%s",$sourceDir,$repo);
+	    if (-d $calibsrcdir)
+	    {
+		print LOG "rsync calibrations from $calibsrcdir to $calibrationstargetdir\n";
+		my $rsynccmd = sprintf("rsync -a %s/* --exclude '.git' %s",$calibsrcdir,$calibrationstargetdir);
+		system($rsynccmd);
+	    }
+	}
     }
-    print LOG $gitcommand, "\n";
-    goto END if &doSystemFail($gitcommand);
 # rsync over common root macros to $OFFLINE_MAIN/rootmacros
     my $macrotargetdir = sprintf("%s/rootmacros",$installDir);
     make_path($macrotargetdir,{mode => 0775});
@@ -1629,7 +1644,7 @@ sub CreateCmakeCommand
     my $cmakesourcedir = shift;
     if ($packagename =~ /acts/)
     {
-	my $cmakecmd = "cmake -DBOOST_ROOT=${OFFLINE_MAIN} -DTBB_ROOT_DIR=${OPT_SPHENIX}/tbb -DEigen3_DIR=${OPT_SPHENIX}/eigen/share/eigen3/cmake -DROOT_DIR=${ROOTSYS}/cmake -DACTS_BUILD_TGEO_PLUGIN=ON -DACTS_BUILD_EXAMPLES=ON -DACTS_BUILD_EXAMPLES_PYTHIA8=ON -DPythia8_INCLUDE_DIR=${OFFLINE_MAIN}/include/Pythia8 -DPythia8_LIBRARY=${OFFLINE_MAIN}/lib/libpythia8.so -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_SKIP_INSTALL_RPATH=ON -DCMAKE_SKIP_RPATH=ON -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_INSTALL_PREFIX=$installDir -Wno-dev";
+	my $cmakecmd = sprintf("cmake -DBOOST_ROOT=${OFFLINE_MAIN} -DTBB_ROOT_DIR=${OPT_SPHENIX}/%s -DEigen3_DIR=${OPT_SPHENIX}/eigen/share/eigen3/cmake -DROOT_DIR=${ROOTSYS}/cmake -DACTS_BUILD_TGEO_PLUGIN=ON -DACTS_BUILD_EXAMPLES=ON -DACTS_BUILD_EXAMPLES_PYTHIA8=ON -DPythia8_INCLUDE_DIR=${OFFLINE_MAIN}/include/Pythia8 -DPythia8_LIBRARY=${OFFLINE_MAIN}/lib/libpythia8.so -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_SKIP_INSTALL_RPATH=ON -DCMAKE_SKIP_RPATH=ON -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_INSTALL_PREFIX=$installDir -Wno-dev",$externalPackages{"tbb"});
         if ($opt_version =~ /debug/)
         {
             $cmakecmd = sprintf("%s -DCMAKE_BUILD_TYPE=Debug",$cmakecmd);
