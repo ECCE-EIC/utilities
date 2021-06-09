@@ -69,7 +69,7 @@ pipeline
 										[[
 										credentialsId: 'sPHENIX-bot', 
 										url: 'https://github.com/ECCE-EIC/coresoftware',
-										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
+										refspec: ('+refs/heads/master:refs/remotes/origin/master')
 										]]
 									] //checkout
 								)//checkout				
@@ -89,7 +89,7 @@ pipeline
 										[[
 										credentialsId: 'sPHENIX-bot', 
 										url: 'https://github.com/ECCE-EIC/tutorials',
-										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
+										refspec: ('+refs/heads/master:refs/remotes/origin/master')
 										]]
 									] //checkout
 								)//checkout			
@@ -110,7 +110,7 @@ pipeline
 										[[
 										credentialsId: 'sPHENIX-bot', 
 										url: 'https://github.com/ECCE-EIC/macros',
-										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
+										refspec: ('+refs/heads/master:refs/remotes/origin/master')
 										]]
 									] //checkout
 								)//checkout			
@@ -131,7 +131,7 @@ pipeline
 										[[
 										credentialsId: 'sPHENIX-bot', 
 										url: 'https://github.com/ECCE-EIC/online_distribution',
-										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
+										refspec: ('+refs/heads/master:refs/remotes/origin/master')
 										]]
 									] //checkout
 								)//checkout			
@@ -152,7 +152,7 @@ pipeline
 										[[
 										credentialsId: 'sPHENIX-bot', 
 										url: 'https://github.com/ECCE-EIC/acts',
-										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
+										refspec: ('+refs/heads/master:refs/remotes/origin/master')
 										]]
 									] //checkout
 								)//checkout			
@@ -172,7 +172,7 @@ pipeline
 										[[
 										credentialsId: 'sPHENIX-bot', 
 										url: 'https://github.com/ECCE-EIC/ecce-detectors',
-										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
+										refspec: ('+refs/heads/master:refs/remotes/origin/master')
 										]]
 									] //checkout
 								)//checkout			
@@ -192,7 +192,7 @@ pipeline
 										[[
 										credentialsId: 'sPHENIX-bot', 
 										url: 'https://github.com/ECCE-EIC/ecce-detectors',
-										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
+										refspec: ('+refs/heads/master:refs/remotes/origin/master')
 										]]
 									] //checkout
 								)//checkout			
@@ -213,7 +213,7 @@ pipeline
 										[[
 										credentialsId: 'sPHENIX-bot', 
 										url: 'https://github.com/ECCE-EIC/analysis',
-										refspec: ('+refs/pull/*:refs/remotes/origin/pr/* +refs/heads/master:refs/remotes/origin/master')
+										refspec: ('+refs/heads/master:refs/remotes/origin/master')
 										]]
 									] //checkout
 								)//checkout			
