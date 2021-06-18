@@ -220,6 +220,29 @@ pipeline
 							} // dir
 							
 							
+							dir('geant4')
+							{
+								checkout(
+									[
+										$class: 'GitSCM',
+										extensions: [               
+											[$class: 'CleanBeforeCheckout'], 
+											[$class: 'CleanCheckout'],
+											[$class: 'RelativeTargetDirectory', relativeTargetDir: 'tree/geant4-10.6-release/']										
+										],
+										branches: [
+											[name: "geant4-10.6-release"]
+							        		], 
+										userRemoteConfigs: 
+										[[
+										credentialsId: 'sPHENIX-bot', 
+										url: 'https://github.com/ECCE-EIC/geant4',
+										]]
+									] //checkout
+								)//checkout			
+							} // dir
+							
+							
 							
 						} // dir('work')
 					}
