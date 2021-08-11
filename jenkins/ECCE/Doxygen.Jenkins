@@ -191,7 +191,7 @@ pipeline
 										userRemoteConfigs: 
 										[[
 										credentialsId: 'sPHENIX-bot', 
-										url: 'https://github.com/ECCE-EIC/ecce-detectors',
+										url: 'https://github.com/ECCE-EIC/fun4all_eicdetectors',
 										refspec: ('+refs/heads/master:refs/remotes/origin/master')
 										]]
 									] //checkout
